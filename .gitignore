@@ -33,3 +33,4 @@ build/
 .vscode/
 
 logs/
+scripts/dataupload-0.0.1-SNAPSHOT.jar
