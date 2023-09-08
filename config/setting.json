@@ -1,0 +1,15 @@
+{
+  "companies":[
+    {
+      "cid":"1000",
+      "companyCode":"320810123",
+      "companyName":"江苏艾科维科技股份有限公司",
+      "appKey":"hjgy230101",
+      "appSecret":"f54d4113a6e4a55d9bc8952e40665968",
+      "serverAddress":"http://60.220.185.162:8901",
+      "adpServerIp":"10.54.4.21",
+      "adpServerPort":"8080",
+      "bitchSize":"9999"
+    }
+  ]
+}
