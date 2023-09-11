@@ -9,7 +9,7 @@ import java.util.Map;
 @Component
 public class RestTemplateUtils {
 
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     public RestTemplateUtils(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;

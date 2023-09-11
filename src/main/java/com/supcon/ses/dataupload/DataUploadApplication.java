@@ -29,7 +29,7 @@ public class DataUploadApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         this.initialization();
     }
 
