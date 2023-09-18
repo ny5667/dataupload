@@ -6,11 +6,11 @@ import com.supcon.ses.dataupload.constant.DefaultSettingConstant;
 import com.supcon.ses.dataupload.model.env.IdDataDTO;
 import com.supcon.ses.dataupload.model.pojo.AlarmPoint;
 import com.supcon.ses.dataupload.model.setting.CompanyConfig;
-import com.supcon.ses.dataupload.model.vo.TagVo;
 import com.supcon.ses.dataupload.repository.AlarmPointJdbcTemplateRepository;
-import com.supcon.ses.dataupload.repository.TagRestTemplateRepository;
-import com.supcon.ses.dataupload.utils.JsonHelper;
-import com.supcon.ses.dataupload.utils.RestTemplateUtils;
+import com.supcon.ses.datauploadparent.model.vo.TagVo;
+import com.supcon.ses.datauploadparent.repository.TagRestTemplateRepository;
+import com.supcon.ses.datauploadparent.utils.JsonHelper;
+import com.supcon.ses.datauploadparent.utils.RestTemplateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -37,7 +37,7 @@ public class AlarmPointUpload {
 
     private final TagRestTemplateRepository tagRestTemplateRepository;
 
-    private final RestTemplateUtils restTemplateUtils;
+    private static final RestTemplateUtils restTemplateUtils = new RestTemplateUtils();
 
     private static final Map<String, Float> value_map = new HashMap<>();
 
@@ -46,10 +46,9 @@ public class AlarmPointUpload {
         value_map.put("true", 1f);
     }
 
-    public AlarmPointUpload(AlarmPointJdbcTemplateRepository repository, TagRestTemplateRepository tagRestTemplateRepository, RestTemplateUtils restTemplateUtils) {
+    public AlarmPointUpload(AlarmPointJdbcTemplateRepository repository, TagRestTemplateRepository tagRestTemplateRepository) {
         this.repository = repository;
         this.tagRestTemplateRepository = tagRestTemplateRepository;
-        this.restTemplateUtils = restTemplateUtils;
     }
 
     @Scheduled(fixedRate = 5 * 1000)

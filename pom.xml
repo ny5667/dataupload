@@ -63,6 +63,12 @@
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.69</version>
 		</dependency>
+		<!--数据上报基础包-->
+		<dependency>
+			<groupId>com.supcon.ses</groupId>
+			<artifactId>datauploadparent</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
